@@ -2,9 +2,9 @@ name: Go
 
 on:
   push:
-    branches: [ main ]
+    branches: [ testPR121 ]
   pull_request:
-    branches: [ main ]
+    branches: [ testPR121 ]
 
 jobs:
 
@@ -36,6 +36,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
 
       - name: Install package
         run: |
